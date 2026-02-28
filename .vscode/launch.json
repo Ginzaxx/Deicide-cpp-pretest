@@ -2,16 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "C/C++ Runner: Debug Session",
+      "name": "Run Game",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/game.exe",
       "args": [],
       "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "C:/mingw64/bin/gdb.exe",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

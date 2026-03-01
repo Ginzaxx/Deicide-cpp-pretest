@@ -2,6 +2,9 @@
 #include "BaseCard.h"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
+#include <string>
+#include <cctype>
 
 CardRegistry::CardRegistry()//factory
 {
@@ -26,4 +29,16 @@ ICard* CardRegistry::CreateRandomCard() const
 {
     int index = rand() % prototypes.size();
     return prototypes[index]->Clone();
+}
+
+void CardRegistry::ShowAllPrototypes() const
+{
+    std::cout << "\n--- MASTER CARD REGISTRY ---\n";
+    for (size_t i = 0; i < prototypes.size(); ++i)
+    {
+        std::cout << i + 1 << ". " << prototypes[i]->GetName() 
+                  << " [Journey: " << prototypes[i]->GetJourney() 
+                  << " | Cycle: " << prototypes[i]->GetCycle() << "]\n";
+    }
+    std::cout << "---------------------------\n";
 }

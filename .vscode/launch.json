@@ -2,16 +2,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Game",
+      "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/game.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
       "externalConsole": true,
+      "cwd": "c:/Ginza/Unity Project/Deicide-cpp-pretest/src",
+      "program": "c:/Ginza/Unity Project/Deicide-cpp-pretest/src/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "C:/mingw64/bin/gdb.exe",
+      "miDebuggerPath": "gdb",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",

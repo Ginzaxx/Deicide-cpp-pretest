@@ -5,11 +5,12 @@
 
 class CardRegistry
 {
-private:
-    std::vector<std::unique_ptr<ICard>> prototypes;
+    private:
+        std::vector<std::unique_ptr<ICard>> prototypes;
 
-public:
-    CardRegistry();
+    public:
+        CardRegistry();
 
-    ICard* CreateRandomCard() const;
+        ICard* CreateRandomCard() const;
+        void ShowAllPrototypes() const;
 };

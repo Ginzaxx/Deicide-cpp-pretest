@@ -11,4 +11,7 @@ public:
     virtual int GetJourney() const = 0;   // base score
     virtual int GetCycle() const = 0;     // multiplier
     virtual std::string GetName() const = 0;
+
+    virtual void SetJourney(int j) = 0;
+    virtual void SetCycle(int c) = 0;
 };

@@ -16,4 +16,7 @@ public:
     int GetJourney() const override;
     int GetCycle() const override;
     std::string GetName() const override;
+    
+    void SetJourney(int j) override;
+    void SetCycle(int c) override;
 };

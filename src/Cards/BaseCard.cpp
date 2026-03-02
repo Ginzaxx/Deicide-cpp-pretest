@@ -11,3 +11,11 @@ ICard* BaseCard::Clone() const
 int BaseCard::GetJourney() const { return journey; }
 int BaseCard::GetCycle() const { return cycle; }
 std::string BaseCard::GetName() const { return name; }
+
+void BaseCard::SetJourney(int j) {
+    this->journey = j;
+}
+
+void BaseCard::SetCycle(int c) {
+    this->cycle = c;
+}

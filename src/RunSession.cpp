@@ -1,5 +1,6 @@
 #include "RunSession.h"
 #include "ScoringSystem.h"
+#include "ModifierFactory.h"
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -39,7 +40,9 @@ void RunSession::Start() {
             }
         }
 
-        // Hitung Skor menggunakan ScoringSystem
+        ModifierFactory::ApplyBonds(selectedCards);
+
+        // --- TAHAP PERHITUNGAN SKOR ---
         int playerChoicesScore = ScoringSystem::CalculateScore(selectedCards);
         ScoringSystem::DisplayScore(selectedCards);
 

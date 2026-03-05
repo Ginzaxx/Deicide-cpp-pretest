@@ -10,4 +10,5 @@ private:
 
 public:
     std::vector<std::unique_ptr<ICard>> DrawHand(int amount);
+    CardRegistry& GetRegistry();
 };

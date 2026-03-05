@@ -11,3 +11,8 @@ std::vector<std::unique_ptr<ICard>> Deck::DrawHand(int amount)
 
     return hand;
 }
+
+CardRegistry& Deck::GetRegistry()
+{
+    return registry;
+}

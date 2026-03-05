@@ -13,4 +13,6 @@ class CardRegistry
 
         ICard* CreateRandomCard() const;
         void ShowAllPrototypes() const;
+
+    void UpgradePrototype(const std::string& name, int journeyBuff, int cycleBuff);
 };

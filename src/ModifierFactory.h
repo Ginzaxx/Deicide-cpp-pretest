@@ -6,10 +6,9 @@
 
 class ModifierFactory {
 public:
-    // Fungsi untuk memeriksa dan menerapkan efek ikatan
     static void ApplyBonds(std::vector<std::unique_ptr<ICard>>& selectedCards);
-    
+    static void UpgradeBondScaling(const std::string& bondName);
+    static void ShowBondRegistry(); // Fungsi baru
 private:
-    // Helper untuk mengecek apakah sebuah kartu ada di hand
     static bool HasCard(const std::vector<std::unique_ptr<ICard>>& selectedCards, std::string name);
 };

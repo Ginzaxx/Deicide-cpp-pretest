@@ -1,5 +1,6 @@
 #include <iostream>
 #include "RunSession.h"
+#include "ModifierFactory.h"
 
 int main() {
     int choice = 0;
@@ -14,12 +15,12 @@ int main() {
 
         if (choice == 1) {
             RunSession session;
-            session.Start(); // Keluar dari sini otomatis kembali ke menu
+            session.Start();
         } else if (choice == 2) {
-            // Tampilkan semua kartu di registry
             CardRegistry tempRegistry; 
             tempRegistry.ShowAllPrototypes();
-            
+            ModifierFactory::ShowBondRegistry();
+
             std::cout << "\nPress Enter to return to menu...";
             std::cin.ignore(1000, '\n');
             std::cin.get(); 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <random>
 
 CardRegistry::CardRegistry()//factory
 {
@@ -27,7 +28,10 @@ CardRegistry::CardRegistry()//factory
 
 ICard* CardRegistry::CreateRandomCard() const
 {
-    int index = rand() % prototypes.size();
+    static std::mt19937 gen(std::random_device{}());
+    std::uniform_int_distribution<> dist(0, prototypes.size() - 1);
+
+    int index = dist(gen);
     return prototypes[index]->Clone();
 }
 
@@ -41,4 +45,31 @@ void CardRegistry::ShowAllPrototypes() const
                   << " | Cycle: " << prototypes[i]->GetCycle() << "]\n";
     }
     std::cout << "---------------------------\n";
+}
+
+void CardRegistry::UpgradePrototype(const std::string& name, int journeyBuff, int cycleBuff)
+{
+    for (auto& proto : prototypes)
+    {
+        if (proto->GetName() == name)
+        {
+            int oldJourney = proto->GetJourney();
+            int oldCycle = proto->GetCycle();
+
+            proto->SetJourney(oldJourney + journeyBuff);
+            proto->SetCycle(oldCycle + cycleBuff);
+
+            std::cout << "\n======= CARD PROTOTYPE UPGRADE =======\n";
+            std::cout << "Card: " << name << "\n";
+            std::cout << "Journey : " << oldJourney << " -> " << proto->GetJourney() << "\n";
+            std::cout << "Cycle   : " << oldCycle << " -> " << proto->GetCycle() << "\n";
+            std::cout << "Upgrade Applied: +" << journeyBuff << " Journey, +"
+                      << cycleBuff << " Cycle\n";
+            std::cout << "======================================\n";
+
+            return;
+        }
+    }
+
+    std::cout << "Prototype not found: " << name << "\n";
 }
